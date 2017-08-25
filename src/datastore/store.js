@@ -1,4 +1,5 @@
 import LocalForage from 'localforage'
+import { DB_NAME, DB_DESCRIPTION } from '../config/config.js'
 
 export default class DataStore {
   contructor () {
@@ -8,9 +9,9 @@ export default class DataStore {
   initConfig () {
     LocalForage.config(
       {
-        name: 'Contacts',
+        name: DB_NAME,
         version: 1.0,
-        description: 'browser storage for contacts app'
+        description: DB_DESCRIPTION
       }
     )
   }
@@ -21,10 +22,10 @@ export default class DataStore {
       // Resulting key/value pair -- this callback
       // will be executed for every item in the
       // database.
-      //console.log([key, value], iterationNumber)
-      collection.push({key,value})
+      // console.log([key, value], iterationNumber)
+      collection.push({key, value})
     }).then(function (value) {
-      //console.log('Iteration has completed', value)
+      // console.log('Iteration has completed', value)
       callback(collection)
     }).catch(function (err) {
     // This code runs if there were any errors
