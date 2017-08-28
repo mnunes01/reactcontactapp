@@ -10,7 +10,7 @@ export default class App extends React.Component {
       <Router>
         <div>
           <Header />
-          <Main/>
+          <Main />
         </div>
       </Router>
     )

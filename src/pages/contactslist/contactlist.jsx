@@ -4,15 +4,14 @@ import ViewContactList from './contactlistview.jsx'
 export default class ContactListController extends React.Component {
   render () {
     const ContactComponents = this.props.contacts.map((contact) => {
-      let {key, firstName} = contact
-      console.log(contact)
+      let key = contact.key
+      let { firstName } = contact.value
       return (
         <ViewContactList
           key={key}
-          id={key}
           firstName={firstName}
           deleteAction={() => this.props.deleteAction(key)}
-          clickAction={() => this.handleRedirectAction(key)}
+          clickAction={() => this.props.editAction(key)}
         />
       )
     })

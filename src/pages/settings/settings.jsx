@@ -9,7 +9,7 @@ export default class SettingsController extends React.Component {
   createDummyContact () {
     console.log('dummy contact')
     this.props.storeContact(null, {
-      firstName: 'Mario',
+      firstName: 'Mario ' + Date.now(),
       lastName: 'Nunes',
       email: 'mnunes@fff.com',
       country: 'Portugal'
