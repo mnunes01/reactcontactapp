@@ -4,7 +4,10 @@
 /node_modules
 
 # production
-/build
+/dist
 
 # garbage
 /src/garbage
+
+#service worker
+/public/service-worker.js

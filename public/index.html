@@ -2,17 +2,26 @@
 <html lang=en>
   <head>
     <meta charset="utf-8">
-    <title>Contacts Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>GIG Contacts Manager</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <meta property="og:title" content="GIG Contacts Manager" />
+    <meta name="description" content="GIG Contacts Manager" />
+    <meta property="og:description" content="GIG Contacts Manager" />
+    <meta name="keywords" content="mario nunes react contacts spa gig" />
+    <meta property="og:type" content="article" />
   </head>
   <body>
+    <noscript>
+      Enable JavaScript to run this app.
+    </noscript>
     <div id=app></div>
     <script src="index.js"></script>
     <script>
     /*register service worker*/
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
-        navigator.serviceWorker.register('serviceworker.js')
+        navigator.serviceWorker.register('service-worker.js')
           .then(function(registration) {
               console.log('ServiceWorker registration successful with scope: ', registration.scope);
           }, function(err) {

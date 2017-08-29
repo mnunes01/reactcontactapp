@@ -1,4 +1,6 @@
 var path = require('path')
+const webpack = require('webpack')
+
 var config = {
   entry: './src/main.js',
   output: {
@@ -11,6 +13,16 @@ var config = {
     inline: true,
     port: 8080
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('development'),
+        AUTHOR_NAME: JSON.stringify('Mario Nunes'),
+        CONTACT_DETAILS: JSON.stringify('mnunes01@hotmail.com'),
+        BUILD_DATE: JSON.stringify(new Date())
+      }
+    })
+  ],
   module: {
     loaders: [
       {

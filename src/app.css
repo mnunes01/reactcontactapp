@@ -1,0 +1,153 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,700);
+@import url(https://weloveiconfonts.com/api/?family=fontawesome);
+
+[class*="fontawesome-"]:before {
+  font-family: 'fontawesome', sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+  position:relative;
+  min-height:100%;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+
+body{
+    margin-bottom:80px;
+    font-family: sans-serif;
+}
+
+
+
+.headerLinks {
+    display:block;
+    text-align: center;
+    margin:0 auto;
+    width:100%;
+    padding: 10px;
+    background:#eee;
+    margin-bottom:10px;
+    border-radius: 0 0 5px 5px;
+    border-bottom:1px solid #ccc;
+}
+
+.headerLinks a{
+    display:inline-block;
+    background:#007eff;
+    color:#fff;
+    margin:0 10px;
+    border-radius:5px;
+    text-decoration:none;
+    padding: 7px 10px;
+}
+
+.headerLinks a:hover{
+    opacity:0.8;
+}
+
+.headerLinks a.active{
+  display: none;
+}
+
+.main{
+  display:block;
+  margin:0 auto;
+  width:100%;
+  padding: 10px;
+  max-width:400px;
+  background: #eee;
+  border:1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 30px;
+}
+.main .list{
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+}
+.main .list .row span{
+  max-width: 70px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.main .list .row{
+  margin:10px 0;
+}
+
+.form-row .fields{
+  display: block;
+  margin-bottom: 10px;
+  padding: 0;
+}
+.form-row .fields:before,.form-row .fields::after{
+  content: '';
+  display: table;
+}
+.form-row .fields::after{
+  clear: both;
+}
+
+.form-row .fields>span{
+  float: left;
+  width: 30%;
+  line-height: 30px;
+}
+.form-row .error{
+  padding-left: 30%;
+  color:red;
+  position: relative;
+  top: -8px;
+  font-size: 12px;
+}
+.form-row .fields .field{
+  float: left;
+  height: 30px;
+  border:1px solid #ccc;
+  border-radius: 3px;
+  width: 70%;
+  padding: 0 10px;
+}
+.form-row .select{
+  width: 70%;
+  float: left;
+  font-size:14px;
+}
+.form-row.buttons{
+  text-align: center;
+}
+.form-row .btn, button {
+  cursor: pointer;
+  background: green;
+  display: inline-block;
+  padding: 7px 10px;
+  border-radius:3px;
+  border:0;
+  color:#fff;
+  margin: 10px;
+}
+.form-row .btn:hover, button:hover {
+  opacity: 0.8;
+}
+
+.info{
+  background: lightyellow;
+  border:1px solid orange;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.footer{
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  margin: 0 auto;
+  width: 100%;
+}
