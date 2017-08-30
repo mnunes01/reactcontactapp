@@ -8,6 +8,3 @@
 
 # garbage
 /src/garbage
-
-#service worker
-/public/service-worker.js
