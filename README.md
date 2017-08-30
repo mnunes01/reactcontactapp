@@ -1,6 +1,10 @@
 # [React Contact APP](https://mnunes01.github.io/reactcontactapp/)
 react contacts manager spa using browser indexedDB storage
-a working version of this app can be found on [React Contact APP](https://mnunes01.github.io/reactcontactapp/)
+
+# Live Demo
+A working version of this app can be found on [React Contact APP](https://mnunes01.github.io/reactcontactapp/)
+
+[https://mnunes01.github.io/reactcontactapp/](https://mnunes01.github.io/reactcontactapp/)
 
 ## Instructions
 Pull the repo and run **npm install**
