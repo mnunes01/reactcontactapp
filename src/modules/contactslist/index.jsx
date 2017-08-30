@@ -82,6 +82,7 @@ export default class ContactListController extends React.Component {
       return (
         <ViewContactList
           key={key}
+          id={key}
           firstName={firstName}
           deleteAction={() => this.deleteAction(key)}
           clickAction={() => this.handleRedirectAction(key)}

@@ -9,13 +9,17 @@
 
 import React from 'react'
 import { ActionCreateContact, ActionGetAllContacts, ActionClearCollection } from '../../actions/contactsactions.js'
-
+import * as Labels from './config/labels.js'
 export default class SettingsController extends React.Component {
   constructor () {
     super()
+    console.log(Labels)
     this.createDummyContatc = this.createDummyContact.bind(this)
     this.logCollection = this.logCollection.bind(this)
     this.clearCollection = this.clearCollection.bind(this)
+    this.state = {
+      outputMSG: ''
+    }
   }
 
   /**
@@ -23,13 +27,20 @@ export default class SettingsController extends React.Component {
   * @method createDummyContact
   */
   createDummyContact () {
+    this.setState({ outputMSG: Labels._STATUS_MSG_INCOURSE_ })
     ActionCreateContact(
       {
         firstName: 'Mario',
         lastName: 'Nunes',
         email: 'mnunes@fff.com',
         country: 'Portugal'
-      }, () => { console.log('contact created') })
+      }, (err) => {
+        if (err) {
+          this.setState({ outputMSG: Labels._STATUS_MSG_ERR_ })
+        } else {
+          this.setState({ outputMSG: Labels._STATUS_MSG_CONTACT_CREATED_ })
+        }
+      })
   }
 
   /**
@@ -37,10 +48,13 @@ export default class SettingsController extends React.Component {
   * @method logCollection
   */
   logCollection () {
+    this.setState({ outputMSG: Labels._STATUS_MSG_INCOURSE_ })
     ActionGetAllContacts((err, data) => {
       if (err) {
         console.log(err)
+        this.setState({ outputMSG: Labels._STATUS_MSG_ERR_ })
       } else {
+        this.setState({ outputMSG: Labels._STATUS_MSG_COLLECTION_LOGGED_ })
         console.log(data)
       }
     })
@@ -51,11 +65,12 @@ export default class SettingsController extends React.Component {
   * @method clearCollection
   */
   clearCollection () {
+    this.setState({ outputMSG: Labels._STATUS_MSG_INCOURSE_ })
     ActionClearCollection((err = null) => {
       if (err) {
-        console.log(err)
+        this.setState({ outputMSG: Labels._STATUS_MSG_ERR_ })
       } else {
-        console.log('collection cleared')
+        this.setState({ outputMSG: Labels._STATUS_MSG_COLLECTION_CLEARED_ })
       }
     })
   }
@@ -63,6 +78,9 @@ export default class SettingsController extends React.Component {
   render () {
     return (
       <div className='settings'>
+        <div className='info'>
+          <small>{this.state.outputMSG}</small>
+        </div>
         <div>
           <label>
             Create Dummy Data: <button onClick={this.createDummyContatc}>New Contact</button>

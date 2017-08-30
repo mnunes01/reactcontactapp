@@ -60,13 +60,12 @@ class ContactsStore {
   */
   addContact (key, values, callback) {
     key = key === null || key === undefined ? key = Date.now().toString() : key
-    console.log(key, values)
     LocalForage.setItem(key, values)
       .then(function (value) {
         callback(null, {key, value})
       })
       .catch(function (err) {
-        console.log('store error: ', err)
+        callback(err)
       })
   }
 

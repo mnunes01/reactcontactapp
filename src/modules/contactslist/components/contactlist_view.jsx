@@ -9,7 +9,7 @@ import FaceIcon from 'material-ui-icons/Face' // eslint-disable-line no-unused-v
 
 export default class ViewContactList extends React.Component {
   render () {
-    const {deleteAction, clickAction, firstName, key} = this.props
+    const {deleteAction, clickAction, firstName, id} = this.props
     return (
       <div className='row'>
         <Chip className='chip'
@@ -19,7 +19,7 @@ export default class ViewContactList extends React.Component {
             </Avatar>
           }
           label={firstName}
-          key={key}
+          id={id}
           onClick={clickAction}
           onRequestDelete={deleteAction}
         />
