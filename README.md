@@ -28,4 +28,4 @@ The following packages are used:
 ## Testing
 
 For module testing it was used [JEST](https://www.npmjs.com/package/jest)
-JEST is configure to search for the tests inside the folders with name '__tests__'
+JEST is configure to search for the tests inside the folders with name *__tests__*
