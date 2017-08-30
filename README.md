@@ -1,4 +1,4 @@
-# reactcontactapp
+# React Contact App
 react contacts manager spa using browser indexedDB storage
 
 ## Instructions
@@ -36,7 +36,7 @@ Package.json contains several scrips that can be run with npm
 ### `npm start`
 
 Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:8080](http://localhost:3000) to view it in the browser.
 
 ### `npm test`
 
