@@ -15,7 +15,7 @@ The collection is persistent on the browser.
 The app was based on the flux pattern to handle external [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) data operations.
 
 Navigating to the home page user is presented either with a list of the stored records or a message informing that the contact list is empty.
-In case theres already stored contacts on the localStorage of the browser the user is using to access the app, a list of contacts is rendered
+In case theres already stored contacts on the indexedDB of the browser the user is using to access the app, a list of contacts is rendered
 The user can then click over the contact 'chip' to access the view/edit view or click the 'X' to remove the contact of the localStorage.
 
 Add contact presents the user with a new contact view where the user can register a new contact, filling the fields with correct values and clicking on save.
