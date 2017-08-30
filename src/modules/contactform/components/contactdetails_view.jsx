@@ -77,10 +77,12 @@ export default class ViewContactDetails extends React.Component {
 
           <div className='form-row buttons'>
             <input className='btn' type='submit' name='saveContact' value='Save' disabled={formDisabled} />
-            {this.props.showDeleteButton ? <button className='btn' onClick={this.props.deleteAction} disabled={formDisabled}>Delete</button> : ''}
-            <button className='btn' onClick={this.props.closeAction} disabled={formDisabled}>Close</button>
           </div>
         </form>
+        <div className='form-row buttons'>
+          {this.props.showDeleteButton ? <button className='btn' onClick={this.props.deleteAction} disabled={formDisabled}>Delete</button> : ''}
+          <button className='btn' onClick={this.props.closeAction} disabled={formDisabled}>Close</button>
+        </div>
       </div>
     )
   }

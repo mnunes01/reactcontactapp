@@ -13,7 +13,6 @@ import * as Labels from './config/labels.js'
 export default class SettingsController extends React.Component {
   constructor () {
     super()
-    console.log(Labels)
     this.createDummyContatc = this.createDummyContact.bind(this)
     this.logCollection = this.logCollection.bind(this)
     this.clearCollection = this.clearCollection.bind(this)

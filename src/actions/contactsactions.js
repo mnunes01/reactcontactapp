@@ -45,7 +45,6 @@ export function ActionDeleteContact (key, callback) {
 * @param {requestCallback} callback - The callback that handles the response.
 */
 export function ActionSaveContact (values, callback) {
-  console.log(values.key)
   dispatcher.dispatch({
     type: 'SAVE_CONTACT',
     callback: callback,
