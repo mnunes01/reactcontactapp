@@ -24,3 +24,8 @@ The following packages are used:
 - [react-virtualized-select](https://www.npmjs.com/package/react-virtualized-select)
 - [style-loader](https://www.npmjs.com/package/style-loader)
 - [validator](https://www.npmjs.com/package/validator)
+
+## Testing
+
+For module testing it was used [JEST](https://www.npmjs.com/package/jest)
+JEST is configure to search for the tests inside the folders with name '__tests__'
