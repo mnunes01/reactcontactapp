@@ -2,7 +2,8 @@ const path = require('path')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
-const CompressionPlugin = require("compression-webpack-plugin");
+const CompressionPlugin = require('compression-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const webpack = require('webpack')
 
 console.log()
@@ -23,14 +24,18 @@ var config = {
       }
     }),
     new CleanWebpackPlugin(['dist']),
+    new CopyWebpackPlugin([
+      {
+        from: 'public/index.html',
+        to: './'
+      }
+    ]),
     new SWPrecacheWebpackPlugin(
       {
         cacheId: 'gigcontacts',
         dontCacheBustUrlsMatching: /\.\w{8}\./,
         filename: 'service-worker.js',
-        minify: true,
-        navigateFallback: path + 'index.html',
-        staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
+        minify: true
       }
     ),
     new UglifyJSPlugin({
@@ -42,10 +47,7 @@ var config = {
           comments: false,
           beautify: false
         },
-        warnings: false,
-        'process.env': {
-          NODE_ENV: JSON.stringify('production')
-        }
+        warnings: false
       }
     }),
     new CompressionPlugin({
